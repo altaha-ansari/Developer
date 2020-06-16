@@ -1,5 +1,5 @@
 const callSendAPI = require("./callSendAPI");
-const genericTemplate = require("../Utils/genericTemplate");
+const welcome = require("./welcome");
 
 function handleMessage(sender_psid, received_message) {
 
@@ -8,33 +8,15 @@ function handleMessage(sender_psid, received_message) {
     // Check if the message contains text
     if (received_message.text) {
 
-        // Create the payload for a basic text message
-        response = {
-            "text": `You sent the message: "${received_message.text}". Now send me an image!`
-        }
+        response = welcome();
+        console.log("Message sent");
     } else if (received_message.attachments) {
+        response = {
+            "text": `You sent the message: "${received_message.text}".`
+        }
 
-        // Gets the URL of the message attachment
-        let attachment_url = received_message.attachments[0].payload.url;
-        let props = {
-            title: "Is this the right picture?",
-            subtitle: "Tap a button to answer.",
-            image_url: attachment_url,
-            buttons: [{
-                    title: "Yes!",
-                    payload: "yes"
-                },
-                {
-                    title: "No!",
-                    payload: "no"
-                },
-            ]
-        };
-        response = genericTemplate(props);
-
-        // Sends the response message
-        callSendAPI(sender_psid, response);
     }
+    callSendAPI(sender_psid, response);
 }
 
 module.exports = handleMessage;
