@@ -8,7 +8,6 @@ const router = express.Router();
 router.post('/', (req, res) => {
 
     let body = req.body;
-
     // Checks this is an event from a page subscription
     if (body.object === 'page') {
 
