@@ -2,10 +2,12 @@ const request = require("request");
 
 function callSendAPI(sender_psid, response) {
   // Construct the message body
+
   let request_body = {
     recipient: {
       id: sender_psid,
     },
+    messaging_type: response.quick_replies && "RESPONSE",
     message: response,
   };
 

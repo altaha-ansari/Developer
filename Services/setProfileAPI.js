@@ -1,4 +1,4 @@
-const genericTemplate = require("../Utils/genericTemplate");
+const callProfileAPI = require("./callProfileAPI");
 const persistentMenu = require("../Utils/persistentMenu");
 // const templateData = [{
 //         title: "Enquire of a Product",
@@ -39,13 +39,13 @@ const templateData = [{
     },
     {
         title: "Contact Us",
-        payload: "contact_us"
+        payload: "contact"
     },
 ]
 
 function welcome() {
     const response = persistentMenu(templateData);
-    return response;
+    callProfileAPI(response);
 }
 
 module.exports = welcome;

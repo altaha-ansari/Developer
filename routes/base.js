@@ -20,10 +20,10 @@ router.post('/', (req, res) => {
             let sender_psid = webhook_event.sender.id;
             console.log(webhook_event);
 
-            if (webhook_event.message) {
+            if (webhook_event.postback || webhook_event.message.quick_reply) {
+                handlePostback(sender_psid, webhook_event.postback || webhook_event.message.quick_reply);
+            } else if (webhook_event.message) {
                 handleMessage(sender_psid, webhook_event.message);
-            } else if (webhook_event.postback) {
-                handlePostback(sender_psid, webhook_event.postback);
             }
         });
 
