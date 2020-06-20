@@ -1,36 +1,36 @@
 const genericTemplate = require("../Utils/genericTemplate");
 const templateData = [{
-        title: "Express-React Blog",
+        title: "Low-Poly Art",
         subtitle: "click for more info",
         image_url: "3a1957269552.ngrok.io/enquire.jpg",
         buttons: [{
             title: "More",
-            payload: "products_web_blog"
+            payload: "products_graphics_lowPoly"
         }, ]
     },
     {
-        title: "Mess Management Web App",
+        title: "Covid-19 Poster",
         subtitle: "click for more info",
         image_url: "3a1957269552.ngrok.io/enquire.jpg",
         buttons: [{
             title: "More",
-            payload: "products_web_mess"
+            payload: "products_graphics_poster"
         }, ]
     },
 ];
 
-function webProjects(payload) {
-
+function graphicProjects(payload) {
+    console.log(`webProjects.js:=> payload: ${payload}`);
     let response;
     switch (payload) {
-        case "blog":
+        case "lowPoly":
             response = {
-                "text": "This is the info of my blog"
+                "text": "This is the info of my low-poly art"
             };
             break;
-        case "mess":
+        case "poster":
             response = {
-                "text": "This is the info of my mess app"
+                "text": "This is the info of my poster"
             };
             break;
 
@@ -40,4 +40,4 @@ function webProjects(payload) {
     return response;
 }
 
-module.exports = webProjects;
+module.exports = graphicProjects;

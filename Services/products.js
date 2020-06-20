@@ -1,5 +1,8 @@
 const quickReplies = require("../Utils/quickReplies");
 const webProjects = require("./webProjects");
+const graphicProjects = require("./graphicProjects");
+const arProjects = require("./arProjects");
+const aiMlProjects = require("./aiMlProjects");
 const splitPayload = require("../Utils/splitPayload");
 const reply_data_0 = [{
         title: "Web",
@@ -35,19 +38,13 @@ function products(payload) {
             response = webProjects(payload1 ? payload2 : payload);
             break;
         case "graphics":
-            response = {
-                "text": "graphics products"
-            };
+            response = graphicProjects(payload1 ? payload2 : payload);
             break;
         case "ar":
-            response = {
-                "text": "AR products"
-            };
+            response = arProjects(payload1 ? payload2 : payload);
             break;
         case "aiMl":
-            response = {
-                "text": "AI/ML products"
-            };
+            response = aiMlProjects(payload1 ? payload2 : payload);
             break;
         default:
             response = quickReplies(reply_data_0, "Please select a category.");
