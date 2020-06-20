@@ -1,5 +1,6 @@
 const callSendAPI = require("./callSendAPI");
 const products = require("./products");
+const services = require("./services");
 const splitPayload = require("../Utils/splitPayload");
 
 function handlePostback(sender_psid, received_postback) {
@@ -24,9 +25,7 @@ function handlePostback(sender_psid, received_postback) {
             response = products(payload1 ? payload2 : payload);
             break;
         case "services":
-            response = {
-                "text": "You enquire of a service"
-            }
+            response = services(payload1 ? payload2 : payload);
             break;
         case "contact":
             response = {
