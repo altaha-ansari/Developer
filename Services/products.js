@@ -1,5 +1,6 @@
 const quickReplies = require("../Utils/quickReplies");
-
+const webProjects = require("./webProjects");
+const splitPayload = require("../Utils/splitPayload");
 const reply_data_0 = [{
         title: "Web",
         payload: "products_web",
@@ -23,13 +24,15 @@ const reply_data_0 = [{
 ];
 
 function products(payload) {
-
+    const {
+        payload1,
+        payload2
+    } = splitPayload(payload);
     let response;
-    switch (payload) {
+
+    switch (payload1 || payload) {
         case "web":
-            response = {
-                "text": "web products"
-            };
+            response = webProjects(payload1 ? payload2 : payload);
             break;
         case "graphics":
             response = {
