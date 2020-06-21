@@ -1,0 +1,84 @@
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
+    <title>Contact Form</title>
+</head>
+
+<style>
+    body {
+        margin: 0px 0px;
+
+    }
+
+    h3 {
+        background-color: #585858;
+        color: white;
+        padding: 0.7rem;
+        font-family: 'Fjalla One', sans-serif;
+        font-size: larger;
+        letter-spacing: 1px;
+    }
+
+    .container {
+        width: 80%;
+        margin: auto auto;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+    }
+
+    label {
+        letter-spacing: 1px;
+    }
+
+    p {
+        color: grey;
+    }
+
+    #submit {
+        width: 5rem;
+        height: 2rem;
+        border: none;
+        text-align: center;
+        align-self: center;
+    }
+
+    #message {
+        /* max-width: 80%; */
+        height: 4rem;
+    }
+</style>
+
+<body>
+    <h3>Contact Us</h3>
+    <div class="container">
+        <form action="/ContactUs" method="post">
+            <label for="fname">First Name</label>
+            <br>
+            <input type="text" name="fname" id="fname">
+            <br>
+            <label for="lname">Last Name</label>
+            <br>
+            <input type="text" name="lname" id="lname">
+            <br>
+            <label for="subject">Subject</label>
+            <br>
+            <input type="text" name="subject" id="subject">
+            <br>
+            <label for="message">Message</label>
+            <br>
+            <textarea name="message" id="message"></textarea>
+            <br>
+            <p>*Your response will be recorded and you will be contacted by a live agent soon</p>
+            <input type="submit" value="Submit" id="submit">
+        </form>
+    </div>
+</body>
+
+</html>

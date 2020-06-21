@@ -2,6 +2,13 @@ const callSendAPI = require("./callSendAPI");
 const products = require("./products");
 const services = require("./services");
 const splitPayload = require("../Utils/splitPayload");
+const urlButton = require("../Utils/urlButton");
+
+const reply_url_data_0 = [{
+    url: "https://0fac0ee3e2ae.ngrok.io/contactUsForm.html",
+    title: "continue",
+    whRatio: "tall",
+}];
 
 function handlePostback(sender_psid, received_postback) {
     let response;
@@ -28,13 +35,11 @@ function handlePostback(sender_psid, received_postback) {
             response = services(payload1 ? payload2 : payload);
             break;
         case "contact":
-            response = {
-                "text": "we will be in touch soon!"
-            }
+            response = urlButton(reply_url_data_0, "Tap on continue to fill up a form");
             break;
         default:
             response = {
-                "text": "Sorry! I don't know what to answer"
+                "text": "Sorry! I don't know what to answer, try contacting us through contact us option"
             }
     }
     // Send the message to acknowledge the postback
