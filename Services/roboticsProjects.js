@@ -5,7 +5,7 @@ const templateData = [{
         image_url: "3a1957269552.ngrok.io/enquire.jpg",
         buttons: [{
             title: "More",
-            payload: "products_aiMl_project1"
+            payload: "projects_robotics_project1"
         }, ]
     },
     {
@@ -14,12 +14,12 @@ const templateData = [{
         image_url: "3a1957269552.ngrok.io/enquire.jpg",
         buttons: [{
             title: "More",
-            payload: "products_aiMl_project2"
+            payload: "projects_robotics_project2"
         }, ]
     },
 ];
 
-function aiMlProjects(payload) {
+function roboticsProjects(payload) {
     console.log(`webProjects.js:=> payload: ${payload}`);
     let response;
     switch (payload) {
@@ -40,4 +40,4 @@ function aiMlProjects(payload) {
     return response;
 }
 
-module.exports = aiMlProjects;
+module.exports = roboticsProjects;

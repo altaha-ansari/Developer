@@ -5,7 +5,7 @@ const templateData = [{
         image_url: "3a1957269552.ngrok.io/enquire.jpg",
         buttons: [{
             title: "More",
-            payload: "products_ar_instagram"
+            payload: "projects_ar_instagram"
         }, ]
     },
     {
@@ -14,7 +14,7 @@ const templateData = [{
         image_url: "3a1957269552.ngrok.io/enquire.jpg",
         buttons: [{
             title: "More",
-            payload: "products_ar_snapchat"
+            payload: "projects_ar_snapchat"
         }, ]
     },
 ];

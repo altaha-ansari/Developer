@@ -1,5 +1,5 @@
 const callSendAPI = require("./callSendAPI");
-const products = require("./products");
+const products = require("./projects");
 const services = require("./services");
 const splitPayload = require("../Utils/splitPayload");
 const urlButton = require("../Utils/urlButton");
@@ -28,7 +28,7 @@ function handlePostback(sender_psid, received_postback) {
                 "text": "Hello! Welcome to my page. Get started by selecting an option from menu in bottom left corner."
             }
             break;
-        case "products":
+        case "projects":
             response = products(payload1 ? payload2 : payload);
             break;
         case "services":
