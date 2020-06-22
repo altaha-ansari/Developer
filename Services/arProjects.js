@@ -1,8 +1,10 @@
 const genericTemplate = require("../Utils/genericTemplate");
+const urlButton = require("../Utils/urlButton");
+
 const templateData = [{
         title: "Instagram Effects",
         subtitle: "click for more info",
-        image_url: "3a1957269552.ngrok.io/enquire.jpg",
+        image_url: "https://img.icons8.com/clouds/500/000000/instagram.png",
         buttons: [{
             title: "More",
             payload: "projects_ar_instagram"
@@ -11,7 +13,7 @@ const templateData = [{
     {
         title: "Snapchat Lenses",
         subtitle: "click for more info",
-        image_url: "3a1957269552.ngrok.io/enquire.jpg",
+        image_url: "https://img.icons8.com/clouds/500/000000/snapchat.png",
         buttons: [{
             title: "More",
             payload: "projects_ar_snapchat"
@@ -19,19 +21,27 @@ const templateData = [{
     },
 ];
 
+const reply_url_data_1 = [{
+    url: "https://github.com/altaha-ansari/InstagramEffects",
+    title: "Open",
+    whRatio: "tall",
+}];
+
+const reply_url_data_2 = [{
+    url: "https://github.com/altaha-ansari/SnapchatLenses",
+    title: "Under Development",
+    whRatio: "tall",
+}];
+
 function arProjects(payload) {
-    console.log(`webProjects.js:=> payload: ${payload}`);
+
     let response;
     switch (payload) {
         case "instagram":
-            response = {
-                "text": "This is the info of my instagram filters"
-            };
+            response = urlButton(reply_url_data_1, "Tap on 'open' to get project info");
             break;
         case "snapchat":
-            response = {
-                "text": "This is the info of my snapchat filters"
-            };
+            response = urlButton(reply_url_data_2, "Tap on 'open' to get project info");
             break;
 
         default:
