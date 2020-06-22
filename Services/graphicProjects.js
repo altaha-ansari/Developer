@@ -1,41 +1,51 @@
 const genericTemplate = require("../Utils/genericTemplate");
-const templateData = [{
+const mediaTemplate = require("../Utils/mediaTemplate");
+
+const genericTemplateData = [{
         title: "Low-Poly Art",
-        subtitle: "click for more info",
-        image_url: "3a1957269552.ngrok.io/enquire.jpg",
+        subtitle: "Tap on open to send",
         buttons: [{
-            title: "More",
+            title: "open",
             payload: "projects_graphics_lowPoly"
         }, ]
     },
     {
         title: "Covid-19 Poster",
-        subtitle: "click for more info",
-        image_url: "3a1957269552.ngrok.io/enquire.jpg",
+        subtitle: "Tap on open to send",
         buttons: [{
-            title: "More",
+            title: "open",
             payload: "projects_graphics_poster"
         }, ]
     },
 ];
 
+
+const mediaTemplateData_1 = [{
+    media_type: "image",
+    attachment_id: 263991718165624,
+    buttons: []
+}, ];
+
+const mediaTemplateData_2 = [{
+    media_type: "image",
+    attachment_id: 267866221199621,
+    buttons: []
+}, ];
+
+
 function graphicProjects(payload) {
-    console.log(`webProjects.js:=> payload: ${payload}`);
+
     let response;
     switch (payload) {
         case "lowPoly":
-            response = {
-                "text": "This is the info of my low-poly art"
-            };
+            response = mediaTemplate(mediaTemplateData_1);
             break;
         case "poster":
-            response = {
-                "text": "This is the info of my poster"
-            };
+            response = mediaTemplate(mediaTemplateData_2);
             break;
 
         default:
-            response = genericTemplate(templateData);
+            response = genericTemplate(genericTemplateData);
     }
     return response;
 }
