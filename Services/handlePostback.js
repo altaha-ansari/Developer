@@ -25,7 +25,7 @@ function handlePostback(sender_psid, received_postback) {
     switch (payload1 || payload) {
         case "start":
             response = {
-                "text": "Hello! Welcome to my page. Get started by selecting an option from menu in bottom left corner."
+                "text": "Hello! Welcome to my page. Get started by selecting an option from menu attached with input field below or in bottom left corner. If you wish to talk to me directly, simply click on contact us from the menu and i will reach out to you soon! Have a nice day!"
             }
             break;
         case "projects":

@@ -6,9 +6,8 @@ router.post('/Services', (req, res) => {
         tools,
         description
     } = req.body;
-    // let header = req.header;
-    console.log(tools, description);
-    res.sendStatus(200);
+
+    res.send('<h1>Thank you for your time, you can close the window now.</h1>')
 });
 
 router.post('/ContactUs', (req, res) => {
@@ -18,9 +17,8 @@ router.post('/ContactUs', (req, res) => {
         subject,
         message,
     } = req.body;
-    // let header = req.header;
-    console.log(fname, lname, subject, message);
-    res.sendStatus(200);
+
+    res.send('<h1>Thank you for your time, you can close the window now.</h1>')
 });
 
 module.exports = router;

@@ -18,7 +18,7 @@ router.post('/', (req, res) => {
             // will only ever contain one message, so we get index 0
             let webhook_event = entry.messaging[0];
             let sender_psid = webhook_event.sender.id;
-            console.log(webhook_event);
+            // console.log(webhook_event);
 
             if (webhook_event.postback || webhook_event.message.quick_reply) {
                 handlePostback(sender_psid, webhook_event.postback || webhook_event.message.quick_reply);
