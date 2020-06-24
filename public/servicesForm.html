@@ -59,13 +59,21 @@
     <h3>Details</h3>
     <div class="container">
         <form action="/Services" method="post">
+            <label for="name">Full Name</label>
+            <br>
+            <input type="text" name="name" id="name" required>
+            <br>
+            <label for="email">Email</label>
+            <br>
+            <input type="text" name="email" id="email" required>
+            <br>
             <label for="tools">Tools, Libraries or Frameworks</label>
             <br>
-            <input type="text" name="tools" id="tools">
+            <input type="text" name="tools" id="tools" required>
             <br>
             <label for="description">A brief description of your Work</label>
             <br>
-            <textarea name="description" id="description"></textarea>
+            <textarea name="description" id="description" required></textarea>
             <br>
             <p>*Your response will be recorded and you will be contacted by a live agent soon</p>
             <input type="submit" value="Submit" id="submit">
